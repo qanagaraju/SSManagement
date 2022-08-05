@@ -15,6 +15,13 @@ public class LoginService extends BaseClass  {
 	//static WebDriver driver;
 	static LoginPageObjects loginpage;
 	
+	@Test(priority=2)
+	public void verifypassword() throws IOException {
+		test = extent.createTest("verify password test");
+		
+		loginpage = PageFactory.initElements(BrowserDriver.getCurrentDriver(), LoginPageObjects.class);
+		loginpage.insertPassword(prop.getpassword()).clickSubmit();
+	}
 	
 	
 	
